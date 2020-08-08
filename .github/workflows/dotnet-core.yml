@@ -20,7 +20,8 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
+      # Test disabled until database will be setup in azure
+      #- name: Test
+      # run: dotnet test --no-restore --verbosity normal
 
  
