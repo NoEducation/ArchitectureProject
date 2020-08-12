@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using ArchitectureProject.Api.Modules;
 using ArchitectureProject.Common.Extensions;
@@ -11,6 +12,7 @@ using ArchitectureProject.Logic.WeatherForecasts.Queries;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +23,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ArchitectureProject.Api
 {
@@ -38,6 +41,28 @@ namespace ArchitectureProject.Api
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+
+            var tokenKey = Configuration.GetSection("Token")
+                .GetValue<string>("Secrete");
+
+            var key = Encoding.ASCII.GetBytes(tokenKey);
+
+            services.AddAuthentication(x =>
+            {
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+            });
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
@@ -61,6 +86,13 @@ namespace ArchitectureProject.Api
 
             app.UseRouting();
 
+            app.UseCors(x => x
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

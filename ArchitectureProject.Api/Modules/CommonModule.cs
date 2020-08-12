@@ -13,6 +13,8 @@ namespace ArchitectureProject.Api.Modules
                 Assembly.GetCallingAssembly(),
                 Assembly.GetExecutingAssembly(),
                 Assembly.Load("ArchitectureProject.Logic"));
+
+            builder.RegisterAssemblyModules(Assembly.Load("ArchitectureProject.Infrastructure"));
         }
     }
 }
