@@ -25,4 +25,9 @@
     <ProjectReference Include="..\ArchitectureProject.Domain\ArchitectureProject.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authorizations\Commands\" />
+    <Folder Include="Authorizations\Queries\" />
+  </ItemGroup>
+
 </Project>
