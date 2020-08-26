@@ -12,5 +12,9 @@ export class LocalStorageService {
     removeAccessToken(){
         localStorage.removeItem(this.accessTokenKey)
     }
+
+    getAccessToken() : string {
+      return localStorage.getItem(this.accessTokenKey);
+    }
 }
 
