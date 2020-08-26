@@ -14,7 +14,8 @@ namespace ArchitectureProject.Api.Modules
                 Assembly.GetExecutingAssembly(),
                 Assembly.Load("ArchitectureProject.Logic"));
 
-            builder.RegisterAssemblyModules(Assembly.Load("ArchitectureProject.Infrastructure"));
+            builder.RegisterAssemblyTypes(Assembly.Load("ArchitectureProject.Infrastructure"))
+                .AsImplementedInterfaces();
         }
     }
 }

@@ -64,8 +64,6 @@ namespace ArchitectureProject.IntegrationTests
             };
         }
 
-        
-
         [TearDown]
         public async Task Cleanup()
         {

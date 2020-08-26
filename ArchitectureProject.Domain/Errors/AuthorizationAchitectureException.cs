@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ArchitectureProject.Domain.Errors
 {
@@ -8,11 +7,24 @@ namespace ArchitectureProject.Domain.Errors
     {
         public ICollection<string> Errors { get; set; }
 
+        #region Constructors
+
         public AuthorizationArchitectureException(string[] errors)
         {
             Errors = errors;
         }
 
+        public AuthorizationArchitectureException(string error)
+        {
+            Errors = new List<string>() {error};
+        }
+
+        public AuthorizationArchitectureException()
+        {
+            Errors = new List<string>();
+        }
+
+        #endregion
         public void AddError(string source)
         {
             Errors.Add(source);

@@ -12,6 +12,11 @@ namespace ArchitectureProject.Domain.Errors
             Errors = errors;
         }
 
+        public ValidationArchitectureException(string name , string message)
+        {
+            Errors = new Dictionary<string, string>(){[name] = message };
+        }
+
         public void AddError(string name, string message)
         {
             Errors.Add(name,message);
