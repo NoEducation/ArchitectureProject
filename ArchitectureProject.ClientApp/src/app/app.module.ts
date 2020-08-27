@@ -12,7 +12,8 @@ import { AuthService } from './core/services/auth.service';
 import { AuthGuard } from './core/services/auth-guard.service';
 import { JwtInterceptor } from './core/services/jwt.interceptor';
 import { SetRequestInterceptor } from './core/services/set-request.interceptor';
-
+import { ToastrModule } from 'ngx-toastr';
+import { NotificationService } from './core/services/notification.service';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -21,7 +22,13 @@ import { SetRequestInterceptor } from './core/services/set-request.interceptor';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
   ],
   declarations: [
     AppComponent,
@@ -30,6 +37,7 @@ import { SetRequestInterceptor } from './core/services/set-request.interceptor';
     LocalStorageService,
     AuthService,
     AuthGuard,
+    NotificationService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: SetRequestInterceptor, multi: true },
   ],

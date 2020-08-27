@@ -8,7 +8,7 @@
       <img src="./assets/img/brand/logo.png" class="navbar-brand-img" alt="...">
     </a>
 
-    <ul  class="nav align-items-center d-md-none">
+    <ul *ngIf="isLogged" class="nav align-items-center d-md-none">
       <li class="nav-item" ngbDropdown placement="bottom-right">
         <a class="nav-link nav-link-icon" role="button" ngbDropdownToggle>
           <i class="ni ni-bell-55"></i>
@@ -45,14 +45,14 @@
           <div class="dropdown-divider"></div>
           <a href="#!" class="dropdown-item">
             <i class="ni ni-user-run"></i>
-            <span>Wyloguj</span>
+            <span (click)="logout()">
+               Wyloguj
+              </span>
           </a>
         </div>
       </li>
     </ul>
-    <!-- Collapse -->
     <div class="collapse navbar-collapse"  [ngbCollapse]="isCollapsed" id="sidenav-collapse-main">
-      <!-- Collapse header -->
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
@@ -69,7 +69,6 @@
         </div>
       </div>
 
-      <!-- Navigation -->
       <ul class="navbar-nav">
           <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
               <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">

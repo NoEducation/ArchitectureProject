@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { NotificationService } from 'src/app/core/services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private readonly authService : AuthService,
     private readonly router : Router,
-    private route: ActivatedRoute)
+    private readonly route: ActivatedRoute,
+    private readonly notificationService : NotificationService )
   {}
 
   ngOnInit() {
@@ -25,7 +27,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-
   }
 
   login(){
@@ -33,12 +34,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       .pipe(first())
       .subscribe({
         next: () => {
+            this.notificationService.successMessage("Witaj", "Poprawnie zalogowano")
             this.router.navigate([this.returnUrl ?? 'admin/dashboard']);
         },
         error: error => {
-            debugger;
-            alert(error.error)
-            this.loading = false;
+            this.notificationService.errorMessage(error.error);
         }
     });
   }
