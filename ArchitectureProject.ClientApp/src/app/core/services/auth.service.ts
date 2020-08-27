@@ -6,14 +6,17 @@ import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 import { ROUTE } from "../enums/route.enum";
 import { Router } from "@angular/router";
+import { RegisterUser } from "../models/register/register-user.model";
+import { NotificationService } from "./notification.service";
 
 @Injectable({ providedIn : 'root'})
 export class AuthService {
 
-    private userLogged: BehaviorSubject<boolean>;
+    public userLogged: BehaviorSubject<boolean>;
 
     constructor(private readonly httpClient : HttpClient,
       private readonly localStorage : LocalStorageService,
+      private readonly notificationService : NotificationService,
       private readonly router : Router)
     {
         this.userLogged = new BehaviorSubject<boolean>(null);
@@ -37,10 +40,14 @@ export class AuthService {
               }));
     }
 
-    logout(){
-      debugger;
+    logout() : void{
       this.localStorage.removeAccessToken();
       this.userLogged.next(null);
       this.router.navigate([ROUTE.Login]);
+      this.notificationService.successMessage("Wylogowano użytkownika")
     }
+
+    register(user : RegisterUser) : Observable<any> {
+      return this.httpClient.post(`${environment.apiUrl}/Account/Register`, user);
+   }
 }
