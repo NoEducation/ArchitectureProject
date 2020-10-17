@@ -16,7 +16,8 @@ namespace ArchitectureProject.Common.Extensions
                 {
                     var serviceProvider = componentContext.Resolve<IServiceProvider>();
                     var configuration = componentContext.Resolve<IConfiguration>();
-                    var dbContextOptions = new DbContextOptions<TContext>(new Dictionary<Type, IDbContextOptionsExtension>());
+                    var dbContextOptions =
+                        new DbContextOptions<TContext>(new Dictionary<Type, IDbContextOptionsExtension>());
                     var optionsBuilder = new DbContextOptionsBuilder<TContext>(dbContextOptions)
                         .UseApplicationServiceProvider(serviceProvider)
                         .UseSqlServer(configuration.GetConnectionString(connectionName),
@@ -32,7 +33,8 @@ namespace ArchitectureProject.Common.Extensions
 
             builder.RegisterType<TContext>()
                 .AsSelf()
-                .SingleInstance();
+                .SingleInstance()
+                .PropertiesAutowired(PropertyWiringOptions.PreserveSetValues);
         }
     }
 }

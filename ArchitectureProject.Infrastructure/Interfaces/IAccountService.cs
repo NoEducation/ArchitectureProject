@@ -7,9 +7,7 @@ namespace ArchitectureProject.Infrastructure.Interfaces
     {
         Task<LoggedTokenDto> Login(LoginUserDto model);
         Task Register(RegisterUserDto model);
-
         Task<string> GetAccessToken(string refreshTokenKey, int userId);
-
         Task RevokeRefreshToken(string refreshTokenKey, int userId);
     }
 }

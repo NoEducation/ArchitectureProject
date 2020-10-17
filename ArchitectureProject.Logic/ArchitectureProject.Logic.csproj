@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ArchitectureProject.Common\ArchitectureProject.Common.csproj" />
     <ProjectReference Include="..\ArchitectureProject.Domain\ArchitectureProject.Domain.csproj" />
   </ItemGroup>
 

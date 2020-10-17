@@ -8,7 +8,6 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ArchitectureProject.Api.Controllers
 {
@@ -26,11 +25,10 @@ namespace ArchitectureProject.Api.Controllers
         }
 
         [HttpPost("Login")]
-        [Produces("application/json")]
         [AllowAnonymous]
         public async Task<ActionResult<string>> Login([FromBody]LoginUserDto model)
         {
-            LoggedTokenDto result = new LoggedTokenDto();
+            LoggedTokenDto result;
 
             try
             {

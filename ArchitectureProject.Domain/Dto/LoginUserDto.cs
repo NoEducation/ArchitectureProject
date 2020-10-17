@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ArchitectureProject.Domain.Dto
+﻿namespace ArchitectureProject.Domain.Dto
 {
     public class LoginUserDto
     {

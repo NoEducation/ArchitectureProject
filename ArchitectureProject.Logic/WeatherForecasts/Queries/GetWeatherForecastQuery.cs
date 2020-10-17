@@ -21,6 +21,7 @@ namespace ArchitectureProject.Logic.WeatherForecasts.Queries
         public async Task<IEnumerable<WeatherForecast>> Handle(GetWeatherForecastQuery request, CancellationToken cancellationToken)
         {
             var rng = new Random();
+
             return await Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {
                     Date = DateTime.Now.AddDays(index),
@@ -29,5 +30,6 @@ namespace ArchitectureProject.Logic.WeatherForecasts.Queries
                 })
                 .ToArray());
         }
+
     }
 }
