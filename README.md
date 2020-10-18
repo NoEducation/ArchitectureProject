@@ -1,4 +1,4 @@
-[![LinkedIn][linkedin-shield]][linkedin-url] ![.NET Core](https://github.com/NoEducation/ArchitectureProject/workflows/.NET%20Core/badge.svg?branch=master) [![Build Status](https://dev.azure.com/atrasik/ArchitectureProject/_apis/build/status/NoEducation.ArchitectureProject?branchName=master)](https://dev.azure.com/atrasik/ArchitectureProject/_build/latest?definitionId=1&branchName=master)
+![.NET Core](https://github.com/NoEducation/ArchitectureProject/workflows/.NET%20Core/badge.svg?branch=master) [![Build Status](https://dev.azure.com/atrasik/ArchitectureProject/_apis/build/status/NoEducation.ArchitectureProject?branchName=master)](https://dev.azure.com/atrasik/ArchitectureProject/_build/latest?definitionId=1&branchName=master)
 
 
 
@@ -9,12 +9,14 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">ArchitectureProject</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome project!
     <br />
   </p>
+  
+  <b> [![LinkedIn][linkedin-shield]][linkedin-url] </b>
 </p>
 
 
