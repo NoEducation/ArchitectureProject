@@ -42,4 +42,5 @@ This section should list any major frameworks that you built your project using.
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
 
-
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
