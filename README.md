@@ -18,7 +18,7 @@
   
   <p align="center"> 
     <a href="https://github.com/NoEducation">
-      <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="100" height="100">
+      <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="25" height="25">
     </a>
     <br />
   </p>
