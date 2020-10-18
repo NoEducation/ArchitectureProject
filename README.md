@@ -6,16 +6,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/NoEducation">
-    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="250" height="80">
+    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="200" height="60">
   </a>
-
   <h3 align="center">Architecture Project</h3>
-
   <p align="center">
     An awesome project!
     <br />
   </p>
-  
   <p align="center"> 
     <a href="https://github.com/NoEducation">
       <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="25" height="25">
@@ -42,6 +39,6 @@ This section should list any major frameworks that you built your project using.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Dominik Atrasik - <a href="mailto:dominik.atrasik@gmail.com?subject=Mail from github"><img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/mail-line.png" width="25" height="25"> - dominik.atrasik@gmail.com </a>
 
 
