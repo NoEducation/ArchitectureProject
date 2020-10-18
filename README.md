@@ -15,7 +15,7 @@
   </p>
   <p align="center"> 
     <a href="https://github.com/NoEducation">
-      <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="25" height="25">
+      <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="20" height="20">
     </a>
     <br />
   </p>
@@ -39,6 +39,6 @@ This section should list any major frameworks that you built your project using.
 <!-- CONTACT -->
 ## Contact
 
-Dominik Atrasik - <a href="mailto:dominik.atrasik@gmail.com?subject=Mail from github"><img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/mail-line.png" width="25" height="25"> - dominik.atrasik@gmail.com </a>
+<a href="mailto:dominik.atrasik@gmail.com?subject=Mail from github"><img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/mail-line.png" width="20" height="20"></a> 
 
 
