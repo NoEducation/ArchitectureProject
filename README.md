@@ -1,12 +1,11 @@
 ![.NET Core](https://github.com/NoEducation/ArchitectureProject/workflows/.NET%20Core/badge.svg?branch=master) [![Build Status](https://dev.azure.com/atrasik/ArchitectureProject/_apis/build/status/NoEducation.ArchitectureProject?branchName=master)](https://dev.azure.com/atrasik/ArchitectureProject/_build/latest?definitionId=1&branchName=master)
 
 
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/NoEducation">
-    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="200" height="60">
+    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="150" height="40">
   </a>
   <h3 align="center">Architecture Project</h3>
   <p align="center">
@@ -27,8 +26,8 @@
 
 ![alt text](https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/LandingPage.PNG)
 
-Project on which you are looking right now is simple project written in ASP NET.CORE 3.1. It's contains basic fronted application written in Angular 8. 
-This repo is only for learning purpose. I am trying to implement new features which I just learned learned.
+You are looking  right now at simple project created in ASP NET.CORE 3.1. It's contains basic fronted application written in Angular 8. 
+This repo is existing only for my learning purpose. I am trying to implement new features.
 
 
 ### Built With
