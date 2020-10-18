@@ -6,7 +6,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/NoEducation">
-    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="80" height="160">
+    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="160" height="80">
   </a>
 
   <h3 align="center">Architecture Project</h3>
@@ -22,7 +22,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/LandingPage.PNG)
+![alt text](https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/LandingPage.PNG)
 Project on which you are looking right now is simple project written in ASP NET.CORE 3.1. It's contains basic fronted application written in Angular 8. 
 This repo is only for learning purpose. I am trying to implement new features which I just learned learned.
 
