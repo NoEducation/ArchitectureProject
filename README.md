@@ -17,10 +17,9 @@
   </p>
   
   <p align="center"> 
-   [[params.social]]
-    icon = "linkedin"
-    icon_pack = "fa"
-    link = "https://www.linkedin.com/in/dominik-atrasik-199b90150/"
+    <a href="https://github.com/NoEducation">
+      <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="100" height="100">
+    </a>
     <br />
   </p>
   
