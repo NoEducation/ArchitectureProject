@@ -13,7 +13,7 @@
     <br />
   </p>
   <p align="center"> 
-    <a href="https://github.com/NoEducation">
+    <a href="https://www.linkedin.com/in/dominik-atrasik-199b90150/">
       <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/linkedin-box-fill.png" alt="Linkedin" width="20" height="20">
     </a>
     <br />
