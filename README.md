@@ -5,8 +5,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/NoEducation">
+    <img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/Logo.PNG" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ArchitectureProject</h3>
