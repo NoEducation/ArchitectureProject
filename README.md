@@ -33,12 +33,19 @@ This repo is only for learning purpose. I am trying to implement new features wh
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* [ASP.NET](https://dotnet.microsoft.com/apps/aspnet)
+* [Angular](https://angular.io/)
+* [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
+* [AutoFac](https://autofac.org/)
+* [Dapper](https://github.com/StackExchange/Dapper)
+* [MediatR](https://github.com/jbogard/MediatR)
+* [Nunit](https://nunit.org/)
 * [Bootstrap](https://getbootstrap.com)
-
+* [Typescript](https://www.typescriptlang.org/)
 
 <!-- CONTACT -->
 ## Contact
 
-<a href="mailto:dominik.atrasik@gmail.com?subject=Mail from github"><img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/mail-line.png" width="20" height="20"></a> 
+<a href="mailto:dominik.atrasik@gmail.com?subject=Mail from github"><img src="https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/mail-line.png" width="20" height="20"></a> <b>Dominik Atrasik</b>
 
 
