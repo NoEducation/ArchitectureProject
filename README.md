@@ -31,7 +31,8 @@ This repo is existing only for my learning purpose. I am trying to implement new
 
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This section list all major frameworks that my project is built on.
+
 * [ASP.NET](https://dotnet.microsoft.com/apps/aspnet)
 * [Angular](https://angular.io/)
 * [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
