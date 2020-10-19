@@ -27,6 +27,11 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     
+- task: DotNetCoreCLI@2
+  inputs:
+     command: 'test'
+     projects: '$(Build.Repository.LocalPath)/ArchitectureProject.IntegrationTests'
+    
 - task: Npm@1
   inputs:
     command: 'install'
