@@ -49,7 +49,7 @@ namespace ArchitectureProject.IntegrationTests
             builder.RegisterModule(new CommonModule());
             builder.RegisterInstance(Configuration).As<IConfiguration>();
             builder.RegisterDbContext<ArchitectureProjectDbContext>("DefaultConnection",
-                Assembly.Load("ArchitectureProject.Api").FullName);
+                Assembly.Load("ArchitectureProject.Api").FullName,true);
 
             Container = builder.Build();
 

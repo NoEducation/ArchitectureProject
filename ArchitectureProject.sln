@@ -3,17 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.Api", "ArchitectureProject.Api\ArchitectureProject.Api.csproj", "{C78BB046-4AFF-432D-BF85-4030C6B40CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Api", "ArchitectureProject.Api\ArchitectureProject.Api.csproj", "{C78BB046-4AFF-432D-BF85-4030C6B40CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.Common", "ArchitectureProject.Common\ArchitectureProject.Common.csproj", "{9BD7B88F-965A-4DC6-A1BB-FBDFDBB4A88B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Common", "ArchitectureProject.Common\ArchitectureProject.Common.csproj", "{9BD7B88F-965A-4DC6-A1BB-FBDFDBB4A88B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.Logic", "ArchitectureProject.Logic\ArchitectureProject.Logic.csproj", "{7014B4DF-C53A-41F8-93BA-4D8902F80615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Logic", "ArchitectureProject.Logic\ArchitectureProject.Logic.csproj", "{7014B4DF-C53A-41F8-93BA-4D8902F80615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.Domain", "ArchitectureProject.Domain\ArchitectureProject.Domain.csproj", "{30AEA7B0-B150-4A2C-9910-28C8762565A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Domain", "ArchitectureProject.Domain\ArchitectureProject.Domain.csproj", "{30AEA7B0-B150-4A2C-9910-28C8762565A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.Infrastructure", "ArchitectureProject.Infrastructure\ArchitectureProject.Infrastructure.csproj", "{9D69A4F8-145C-42CD-A940-43A052B80564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Infrastructure", "ArchitectureProject.Infrastructure\ArchitectureProject.Infrastructure.csproj", "{9D69A4F8-145C-42CD-A940-43A052B80564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.IntegrationTests", "ArchitectureProject.IntegrationTests\ArchitectureProject.IntegrationTests.csproj", "{390A95C9-FA82-449A-A6A0-CA2AC583777E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.IntegrationTests", "ArchitectureProject.IntegrationTests\ArchitectureProject.IntegrationTests.csproj", "{390A95C9-FA82-449A-A6A0-CA2AC583777E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ArchitectureProject.ClientApp", "ArchitectureProject.ClientApp\", "{DD79AE96-09E4-425A-9384-228D42721BC2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54036"
+		Debug.AspNetCompiler.PhysicalPath = "ArchitectureProject.ClientApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54036\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54036"
+		Release.AspNetCompiler.PhysicalPath = "ArchitectureProject.ClientApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54036\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54036"
+		SlnRelativePath = "ArchitectureProject.ClientApp\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +66,10 @@ Global
 		{390A95C9-FA82-449A-A6A0-CA2AC583777E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{390A95C9-FA82-449A-A6A0-CA2AC583777E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{390A95C9-FA82-449A-A6A0-CA2AC583777E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD79AE96-09E4-425A-9384-228D42721BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD79AE96-09E4-425A-9384-228D42721BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD79AE96-09E4-425A-9384-228D42721BC2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD79AE96-09E4-425A-9384-228D42721BC2}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,9 @@ namespace ArchitectureProject.Infrastructure
         public ArchitectureProjectDbContext(DbContextOptions<ArchitectureProjectDbContext> options)
             : base(options)
         {
-            this.Connection = this.Database.GetDbConnection();
+
+            this.Connection = this.Database.IsSqlServer() ? this.Database.GetDbConnection() : null;
+
         }
 
         public DbSet<Product> Products { get; set; }

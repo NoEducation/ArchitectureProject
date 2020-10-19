@@ -9,7 +9,7 @@ namespace ArchitectureProject.Common.Extensions
 {
     public static class DbContextRegistration
     {
-        public static void RegisterDbContext<TContext>(this ContainerBuilder builder, string connectionName, string migrationAssemblyName)
+        public static void RegisterDbContext<TContext>(this ContainerBuilder builder, string connectionName, string migrationAssemblyName,bool useInMemoryDatabase = false)
             where TContext : DbContext
         {
             builder.Register(componentContext =>
@@ -18,10 +18,19 @@ namespace ArchitectureProject.Common.Extensions
                     var configuration = componentContext.Resolve<IConfiguration>();
                     var dbContextOptions =
                         new DbContextOptions<TContext>(new Dictionary<Type, IDbContextOptionsExtension>());
+
                     var optionsBuilder = new DbContextOptionsBuilder<TContext>(dbContextOptions)
-                        .UseApplicationServiceProvider(serviceProvider)
-                        .UseSqlServer(configuration.GetConnectionString(connectionName),
+                        .UseApplicationServiceProvider(serviceProvider);
+
+                    if (useInMemoryDatabase)
+                    {
+                        optionsBuilder.UseInMemoryDatabase(configuration.GetConnectionString(connectionName));
+                    }
+                    else
+                    {
+                        optionsBuilder.UseSqlServer(configuration.GetConnectionString(connectionName),
                             serverOptions => serverOptions.MigrationsAssembly(migrationAssemblyName));
+                    }
 
                     return optionsBuilder.Options;
                 }).As<DbContextOptions<TContext>>()
