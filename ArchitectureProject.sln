@@ -69,7 +69,6 @@ Global
 		{390A95C9-FA82-449A-A6A0-CA2AC583777E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD79AE96-09E4-425A-9384-228D42721BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD79AE96-09E4-425A-9384-228D42721BC2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD79AE96-09E4-425A-9384-228D42721BC2}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
