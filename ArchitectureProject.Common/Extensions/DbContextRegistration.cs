@@ -24,7 +24,7 @@ namespace ArchitectureProject.Common.Extensions
 
                     if (useInMemoryDatabase)
                     {
-                        optionsBuilder.UseInMemoryDatabase(configuration.GetConnectionString(connectionName));
+                        optionsBuilder.UseInMemoryDatabase(databaseName: "ArchitectureProjectTest");
                     }
                     else
                     {
