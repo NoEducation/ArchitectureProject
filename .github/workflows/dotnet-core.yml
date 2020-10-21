@@ -18,10 +18,11 @@ jobs:
           dotnet-version: ${{matrix.dotnet}}
       - name: Install dependencies
         run: dotnet restore
+        
       - name: Build
         run: dotnet build --configuration Release --no-restore
-      # Test disabled until database will be setup in azure
-      #- name: Test
-      # run: dotnet test --no-restore --verbosity normal
+        
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
 
  
