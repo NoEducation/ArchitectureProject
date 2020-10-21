@@ -67,7 +67,11 @@ namespace ArchitectureProject.IntegrationTests
         [TearDown]
         public async Task Cleanup()
         {
-            await ResetState();
+            if (DbContext.Database.IsSqlServer())
+            {
+                await ResetState();
+            }
+
             Container.Dispose();
         }
 
