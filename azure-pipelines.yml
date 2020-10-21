@@ -31,7 +31,8 @@ steps:
   inputs:
      command: 'test'
      projects: '$(Build.Repository.LocalPath)/ArchitectureProject.IntegrationTests'
-    
+     arguments: '--no-restore --verbosity normal'     
+
 - task: Npm@1
   inputs:
     command: 'install'
@@ -42,7 +43,6 @@ steps:
     command: 'custom'
     workingDir: '$(Build.Repository.LocalPath)/ArchitectureProject.ClientApp'
     customCommand: 'build --prod'
-
  
 - task: VSTest@2
   inputs:
