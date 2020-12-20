@@ -1,14 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+using ArchitectureProject.Domain.Models;
 using ArchitectureProject.Infrastructure;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -34,8 +31,28 @@ namespace ArchitectureProject.Api
                    if (context.Database.IsSqlServer())
                    {
                        context.Database.Migrate();
-                   }
 
+                       if (!context.Roles.Any())
+                       {
+                           context.Roles.AddRange(new Role[]
+                           {
+                               new Role()
+                               {
+                                   AddedDate = DateTime.Now,
+                                   Name = "Administrator",
+                                   RoleId = ArchitectureProject.Domain.Static.Roles.Administrator,
+                               },
+                               new Role()
+                               {
+                                   AddedDate = DateTime.Now,
+                                   Name = "Normal user",
+                                   RoleId = ArchitectureProject.Domain.Static.Roles.NormalUser,
+                               }
+                           });
+
+                           context.SaveChanges();
+                       }
+                   }
                }
                catch (Exception ex)
                {

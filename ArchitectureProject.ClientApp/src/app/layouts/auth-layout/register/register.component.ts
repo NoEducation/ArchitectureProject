@@ -12,6 +12,7 @@ import { RegisterUser } from 'src/app/core/models/register/register-user.model';
 export class RegisterComponent implements OnInit {
 
   user : RegisterUser = new RegisterUser();
+  passwordStrength : string = "";
 
   constructor(
     private readonly authService : AuthService,
@@ -30,4 +31,17 @@ export class RegisterComponent implements OnInit {
       }, error => this.notificationService.errorMessage(error.error));
   }
 
+  setStrengthOfPassword() : void {
+    var passwordLenght = this.user.password.length;
+
+    if(passwordLenght < 6){
+      this.passwordStrength = "Słabe";
+    }
+    else if(passwordLenght < 9){
+      this.passwordStrength = "Średnie";
+    }
+    else{
+      this.passwordStrength = "Silne"
+    }
+  }
 }

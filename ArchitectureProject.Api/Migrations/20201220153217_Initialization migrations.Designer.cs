@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArchitectureProject.Api.Migrations
 {
     [DbContext(typeof(ArchitectureProjectDbContext))]
-    [Migration("20200811184512_Basic user model")]
-    partial class Basicusermodel
+    [Migration("20201220153217_Initialization migrations")]
+    partial class Initializationmigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,20 +51,36 @@ namespace ArchitectureProject.Api.Migrations
             modelBuilder.Entity("ArchitectureProject.Domain.Models.Role", b =>
                 {
                     b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(25)")
                         .HasMaxLength(25);
 
                     b.HasKey("RoleId");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            AddedDate = new DateTime(2020, 12, 20, 16, 32, 15, 859, DateTimeKind.Local).AddTicks(6696),
+                            Name = "Administrator"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            AddedDate = new DateTime(2020, 12, 20, 16, 32, 15, 867, DateTimeKind.Local).AddTicks(7904),
+                            Name = "Normal user"
+                        });
                 });
 
             modelBuilder.Entity("ArchitectureProject.Domain.Models.User", b =>
@@ -87,10 +103,16 @@ namespace ArchitectureProject.Api.Migrations
                         .HasColumnType("nvarchar(150)")
                         .HasMaxLength(150);
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("RoleId");
 
@@ -100,10 +122,45 @@ namespace ArchitectureProject.Api.Migrations
             modelBuilder.Entity("ArchitectureProject.Domain.Models.User", b =>
                 {
                     b.HasOne("ArchitectureProject.Domain.Models.Role", "Role")
-                        .WithMany()
+                        .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.OwnsMany("ArchitectureProject.Domain.Models.RefreshToken", "RefreshTokens", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<DateTime>("Created")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<DateTime>("Expires")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("ReplacedByToken")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<DateTime?>("Revoked")
+                                .HasColumnType("datetime2");
+
+                            b1.Property<string>("Token")
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("UserId")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("UserId");
+
+                            b1.ToTable("RefreshTokens");
+
+                            b1.WithOwner("User")
+                                .HasForeignKey("UserId");
+                        });
                 });
 #pragma warning restore 612, 618
         }

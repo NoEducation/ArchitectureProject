@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using ArchitectureProject.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +29,30 @@ namespace ArchitectureProject.Infrastructure
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
+
+            modelBuilder.Entity<Role>()
+                .HasIndex(x => x.Name)
+                .IsUnique();
+
+            modelBuilder.Entity<Role>()
+                .Property(x => x.RoleId)
+                .ValueGeneratedNever();
+
+            modelBuilder.Entity<Role>().HasData(new Role[]
+            {
+                new Role()
+                {
+                    AddedDate = DateTime.Now,
+                    Name = "Administrator",
+                    RoleId = ArchitectureProject.Domain.Static.Roles.Administrator,
+                },
+                new Role()
+                {
+                    AddedDate = DateTime.Now,
+                    Name = "Normal user",
+                    RoleId = ArchitectureProject.Domain.Static.Roles.NormalUser,
+                }
+            });
         }
     }
 }

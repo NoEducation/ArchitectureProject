@@ -49,9 +49,7 @@ namespace ArchitectureProject.Api.Migrations
             modelBuilder.Entity("ArchitectureProject.Domain.Models.Role", b =>
                 {
                     b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
@@ -63,7 +61,24 @@ namespace ArchitectureProject.Api.Migrations
 
                     b.HasKey("RoleId");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            AddedDate = new DateTime(2020, 12, 20, 16, 32, 15, 859, DateTimeKind.Local).AddTicks(6696),
+                            Name = "Administrator"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            AddedDate = new DateTime(2020, 12, 20, 16, 32, 15, 867, DateTimeKind.Local).AddTicks(7904),
+                            Name = "Normal user"
+                        });
                 });
 
             modelBuilder.Entity("ArchitectureProject.Domain.Models.User", b =>

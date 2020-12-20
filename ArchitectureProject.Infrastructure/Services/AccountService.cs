@@ -14,10 +14,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace ArchitectureProject.Infrastructure.Services
 {
-
-    /// <summary>
-    /// This service will be separated into command (Operation Result), Queries
-    /// </summary>
+    // TODO.DA This service will be separated into command (Operation Result), Queries
     public class AccountService : IAccountService
     {
         private readonly ArchitectureProjectDbContext _context;

@@ -58,13 +58,26 @@
                      type="password"
                      name="password"
                      [(ngModel)]="user.password"
+                     (change)="setStrengthOfPassword()"
                      >
               </div>
             </div>
-            <div class="text-muted font-italic"><small>Siła hasła: <span class="text-success font-weight-700">Silne</span></small></div>
+            <div *ngIf="passwordStrength.length >= 1" class="text-muted font-italic">
+              <small> Siła hasła:
+                <span class="font-weight-700"
+                  [ngClass]="{
+                   'text-danger': passwordStrength == 'Słabe',
+                   'text-warning': passwordStrength == 'Średnie',
+                   'text-success': passwordStrength == 'Silne' }">
+                  {{passwordStrength}}
+                </span>
+              </small>
+            </div>
+
             <div class="text-center">
               <button type="button"  (click)="registerUser()" class="btn btn-primary mt-4">Stwórz nowe konto</button>
             </div>
+
           </form>
         </div>
       </div>
