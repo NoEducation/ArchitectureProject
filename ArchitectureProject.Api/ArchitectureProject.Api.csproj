@@ -35,5 +35,9 @@
     <ProjectReference Include="..\ArchitectureProject.Logic\ArchitectureProject.Logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 
 </Project>
