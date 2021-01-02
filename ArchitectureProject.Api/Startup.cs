@@ -34,6 +34,7 @@ namespace ArchitectureProject.Api
             });
 
             services.AddHttpContextAccessor();
+            services.AddSwaggerGen();
 
             var tokenKey = Configuration.GetSection("Token")
                 .GetValue<string>("Secrete");
@@ -107,6 +108,12 @@ namespace ArchitectureProject.Api
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Architecture API");
             });
         }
     }

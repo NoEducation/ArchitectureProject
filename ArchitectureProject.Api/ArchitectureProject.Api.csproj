@@ -31,6 +31,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +43,22 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\CEM\.nuget\packages\microsoft.visualstudio.threading.analyzers\16.8.55\build\AdditionalFiles\vs-threading.MembersRequiringMainThread.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\CEM\.nuget\packages\microsoft.visualstudio.threading.analyzers\16.8.55\build\AdditionalFiles\vs-threading.MainThreadAssertingMethods.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\CEM\.nuget\packages\microsoft.visualstudio.threading.analyzers\16.8.55\build\AdditionalFiles\vs-threading.LegacyThreadSwitchingMembers.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Remove="C:\Users\CEM\.nuget\packages\microsoft.visualstudio.threading.analyzers\16.8.55\build\AdditionalFiles\vs-threading.MainThreadSwitchingMethods.txt" />
   </ItemGroup>
 
 
