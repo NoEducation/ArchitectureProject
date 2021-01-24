@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "ArchitectureProject.WorkerService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
