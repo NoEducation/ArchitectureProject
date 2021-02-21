@@ -8,6 +8,7 @@ import { ROUTE } from "../enums/route.enum";
 import { Router } from "@angular/router";
 import { RegisterUser } from "../models/register/register-user.model";
 import { NotificationService } from "./notification.service";
+import { PresenceService } from "./presence-service";
 
 @Injectable({ providedIn : 'root'})
 export class AuthService {
@@ -17,7 +18,8 @@ export class AuthService {
     constructor(private readonly httpClient : HttpClient,
       private readonly localStorage : LocalStorageService,
       private readonly notificationService : NotificationService,
-      private readonly router : Router)
+      private readonly router : Router,
+      private readonly presenceService : PresenceService)
     {
         this.userLogged = new BehaviorSubject<boolean>(null);
     }
@@ -36,6 +38,7 @@ export class AuthService {
                 .pipe(map(resp => {
                   this.localStorage.setAccessToken(resp)
                   this.userLogged.next(true);
+                  this.presenceService.startHubConnection();
                   return resp;
               }));
     }
@@ -43,6 +46,7 @@ export class AuthService {
     logout() : void{
       this.localStorage.removeAccessToken();
       this.userLogged.next(null);
+      this.presenceService.stopHubConnection();
       this.router.navigate([ROUTE.Login]);
       this.notificationService.successMessage("Wylogowano użytkownika")
     }

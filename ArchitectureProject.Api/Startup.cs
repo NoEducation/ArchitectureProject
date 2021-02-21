@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ArchitectureProject.Api.Modules;
 using ArchitectureProject.Common.Extensions;
 using ArchitectureProject.Infrastructure;
+using ArchitectureProject.Infrastructure.SignalR.Hubs;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -35,6 +36,7 @@ namespace ArchitectureProject.Api
 
             services.AddHttpContextAccessor();
             services.AddSwaggerGen();
+            services.AddSignalR();
 
             var tokenKey = Configuration.GetSection("Token")
                 .GetValue<string>("Secrete");
@@ -64,6 +66,18 @@ namespace ArchitectureProject.Api
                         {
                             context.Response.Headers.Add("Token-Expired", "true");
                         }
+                        return Task.CompletedTask;
+                    },
+                    OnMessageReceived = context =>
+                    {
+                        var token = context.Request.Query["access_token"];
+
+                        if (!string.IsNullOrWhiteSpace(token)
+                            && context.Request.Path.StartsWithSegments("/hubs"))
+                        {
+                            context.Token = token;
+                        }
+
                         return Task.CompletedTask;
                     }
                 };
@@ -108,6 +122,8 @@ namespace ArchitectureProject.Api
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+
+                endpoints.MapHub<DefaultHub>("hubs/default-hub");
             });
 
             app.UseSwagger();

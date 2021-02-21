@@ -14,6 +14,7 @@ import { JwtInterceptor } from './core/services/jwt.interceptor';
 import { SetRequestInterceptor } from './core/services/set-request.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './core/services/notification.service';
+import { PresenceService } from './core/services/presence-service';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -38,6 +39,7 @@ import { NotificationService } from './core/services/notification.service';
     AuthService,
     AuthGuard,
     NotificationService,
+    PresenceService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: SetRequestInterceptor, multi: true },
   ],
