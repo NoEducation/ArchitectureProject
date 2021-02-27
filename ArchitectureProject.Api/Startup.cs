@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ArchitectureProject.Api.Modules;
 using ArchitectureProject.Common.Extensions;
 using ArchitectureProject.Infrastructure;
+using ArchitectureProject.Infrastructure.Services;
 using ArchitectureProject.Infrastructure.SignalR.Hubs;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -86,10 +87,10 @@ namespace ArchitectureProject.Api
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-
             builder.RegisterDbContext<ArchitectureProjectDbContext>("DefaultConnection",
                 typeof(Startup).Assembly.GetName().Name);
             builder.RegisterModule(new CommonModule());
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

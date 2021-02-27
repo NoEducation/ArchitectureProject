@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using ArchitectureProject.Infrastructure.Services;
 using Autofac;
 using MediatR.Extensions.Autofac.DependencyInjection;
 using Module = Autofac.Module;
@@ -16,6 +17,9 @@ namespace ArchitectureProject.Api.Modules
 
             builder.RegisterAssemblyTypes(Assembly.Load("ArchitectureProject.Infrastructure"))
                 .AsImplementedInterfaces();
+
+            builder.RegisterType<PresenceTrackerService>()
+                .SingleInstance();
         }
     }
 }
