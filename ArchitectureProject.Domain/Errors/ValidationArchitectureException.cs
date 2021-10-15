@@ -10,6 +10,8 @@ namespace ArchitectureProject.Domain.Errors
         public ValidationArchitectureException(Dictionary<string,string> errors)
         {
             Errors = errors;
+
+            var test = -1;
         }
 
         public ValidationArchitectureException(string name , string message)
