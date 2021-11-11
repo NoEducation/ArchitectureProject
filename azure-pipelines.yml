@@ -16,9 +16,14 @@ variables:
 
 steps:
 - task: UseDotNet@2
+  displayName: 'Install .Net 6 SDK'
   inputs:
-    version: 6.0
+    packageType: 'sdk'
+    version: 6.0.100
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 # - task: NuGetCommand@2
 #   inputs:
 #     restoreSolution: '$(solution)'
