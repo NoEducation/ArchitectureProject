@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ArchitectureProject.Domain.Static;
 
 namespace ArchitectureProject.Api
 {
@@ -40,13 +41,13 @@ namespace ArchitectureProject.Api
                                {
                                    AddedDate = DateTime.Now,
                                    Name = "Administrator",
-                                   RoleId = ArchitectureProject.Domain.Static.Roles.Administrator,
+                                   RoleId = Roles.Administrator,
                                },
                                new Role()
                                {
                                    AddedDate = DateTime.Now,
                                    Name = "Normal user",
-                                   RoleId = ArchitectureProject.Domain.Static.Roles.NormalUser,
+                                   RoleId = Roles.NormalUser,
                                }
                            });
 

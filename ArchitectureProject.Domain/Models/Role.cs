@@ -12,6 +12,6 @@ namespace ArchitectureProject.Domain.Models
         public string Name { get; set; }
         [Required]
         public DateTime AddedDate { get; set; }
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; } = new HashSet<User>();
     }
 }

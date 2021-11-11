@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 
 namespace ArchitectureProject.Domain.Models
 {
-    [Owned]
+    //[Owned]
     public class RefreshToken
     {
         [Key]

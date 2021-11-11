@@ -29,6 +29,14 @@ namespace ArchitectureProject.Infrastructure
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+            //modelBuilder.Entity<User>().OwnsMany(
+            //    p => p.RefreshTokens, a =>
+            //    {
+            //        a.WithOwner().HasForeignKey("User");
+            //        a.Property<int>("Id");
+            //        a.HasKey("Id");
+            //    });
+
             modelBuilder.Entity<Role>()
                 .HasIndex(x => x.Name)
                 .IsUnique();

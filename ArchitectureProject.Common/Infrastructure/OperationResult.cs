@@ -9,8 +9,8 @@ namespace ArchitectureProject.Common.Infrastructure
     {
         private readonly List<string> _errors;
 
-        public bool IsSuccessful => !EnumerableExtensions.Any(_errors);
-        public bool IsFailure => EnumerableExtensions.Any(_errors);
+        public bool IsSuccessful => !_errors.Any();
+        public bool IsFailure => _errors.Any();
 
 
         protected OperationResult(IEnumerable<string> errors = null)

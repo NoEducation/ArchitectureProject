@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 
+
 namespace ArchitectureProject.Infrastructure.Services
 {
     // TODO.DA This service will be separated into command (Operation Result), Queries
@@ -54,7 +55,7 @@ namespace ArchitectureProject.Infrastructure.Services
             var refreshToken = CreateRefreshToken(user, refreshTokenKey);
             var accessToken = _tokenService.GenerateAccessToken(new List<Claim>() {new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())});
 
-            if (EnumerableExtensions.Any(user.RefreshTokens))
+            if (user.RefreshTokens?.Any() == true)
             {
                 var lastAvailableToken = user.RefreshTokens.SingleOrDefault(x => x.IsActive);
                 if (lastAvailableToken != null)

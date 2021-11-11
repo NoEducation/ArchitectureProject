@@ -22,6 +22,6 @@ namespace ArchitectureProject.Domain.Models
 
         public string Password { get; set; }
         [JsonIgnore]
-        public List<RefreshToken> RefreshTokens { get; set; }
+        public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = new HashSet<RefreshToken>();
     }
 }
