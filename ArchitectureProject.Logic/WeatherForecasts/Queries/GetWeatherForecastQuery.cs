@@ -9,7 +9,9 @@ using MediatR;
 namespace ArchitectureProject.Logic.WeatherForecasts.Queries
 {
     public class GetWeatherForecastQuery : IRequest<IEnumerable<WeatherForecast>>
-    {}
+    {
+        public int Id { get; set; }
+    }
 
     public class GetWeatherForecastQueryHandler : IRequestHandler<GetWeatherForecastQuery, IEnumerable<WeatherForecast>>
     {
