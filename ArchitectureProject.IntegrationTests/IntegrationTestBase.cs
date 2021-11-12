@@ -27,8 +27,6 @@ namespace ArchitectureProject.IntegrationTests
         protected ArchitectureProjectDbContext  DbContext { get; private set; }
 
         private static Checkpoint _checkpoint;
-        private static string _currentUserId;
-
 
         [SetUp]
         public void Setup()
@@ -65,11 +63,11 @@ namespace ArchitectureProject.IntegrationTests
         }
 
         [TearDown]
-        public async Task Cleanup()
+        public async Task CleanupAsync()
         {
             if (DbContext.Database.IsSqlServer())
             {
-                await ResetState();
+                await ResetStateAsync();
             }
 
             Container.Dispose();
@@ -85,10 +83,9 @@ namespace ArchitectureProject.IntegrationTests
             }
         }
 
-        public async Task ResetState()
+        public async Task ResetStateAsync()
         {
             await _checkpoint.Reset(Configuration.GetConnectionString("DefaultConnection"));
-            _currentUserId = null;
         }
     }
 }

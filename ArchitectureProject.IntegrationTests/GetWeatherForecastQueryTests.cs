@@ -9,7 +9,7 @@ namespace ArchitectureProject.IntegrationTests
     public class GetWeatherForecastQueryTests : IntegrationTestBase
     {
         [Test]
-        public async Task ValidRequest_OneItemIsReturned()
+        public async Task ValidRequest_OneItemIsReturnedAsync()
         {
             var query = new GetWeatherForecastQuery();
 
