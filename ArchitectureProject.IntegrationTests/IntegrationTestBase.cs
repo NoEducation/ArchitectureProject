@@ -1,20 +1,17 @@
-using System.IO;
-using System.Reflection;
-using System.Threading.Tasks;
-using ArchitectureProject.Api;
 using ArchitectureProject.Api.Modules;
 using ArchitectureProject.Common.Extensions;
 using ArchitectureProject.Infrastructure;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using MediatR;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Moq;
 using NUnit.Framework;
 using Respawn;
+using System.IO;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace ArchitectureProject.IntegrationTests
 {
