@@ -1,9 +1,7 @@
-using System.Text;
-using System.Threading.Tasks;
 using ArchitectureProject.Api.Modules;
 using ArchitectureProject.Common.Extensions;
+using ArchitectureProject.Domain.Configurations;
 using ArchitectureProject.Infrastructure;
-using ArchitectureProject.Infrastructure.Services;
 using ArchitectureProject.Infrastructure.SignalR.Hubs;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -15,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ArchitectureProject.Api
 {
@@ -80,9 +80,13 @@ namespace ArchitectureProject.Api
                         }
 
                         return Task.CompletedTask;
+
                     }
                 };
             });
+
+            // IOptions use
+            services.Configure<JustForIOptionsTests>(Configuration.GetSection("JustForIOptionsTests");
         }
 
         public void ConfigureContainer(ContainerBuilder builder)

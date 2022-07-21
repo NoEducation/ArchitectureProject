@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29728.190
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Api", "ArchitectureProject.Api\ArchitectureProject.Api.csproj", "{C78BB046-4AFF-432D-BF85-4030C6B40CE0}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.Integra
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ArchitectureProject.ClientApp", "ArchitectureProject.ClientApp\", "{DD79AE96-09E4-425A-9384-228D42721BC2}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_54036"
 		Debug.AspNetCompiler.PhysicalPath = "ArchitectureProject.ClientApp\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54036\"
@@ -37,7 +37,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ArchitectureProject.ClientA
 		StartServerOnDebug = "false"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureProject.WorkerService", "ArchitectureProject.WorkerService\ArchitectureProject.WorkerService.csproj", "{6E9CBC0A-2E29-437E-863F-73C4E82A187B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchitectureProject.WorkerService", "ArchitectureProject.WorkerService\ArchitectureProject.WorkerService.csproj", "{6E9CBC0A-2E29-437E-863F-73C4E82A187B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
