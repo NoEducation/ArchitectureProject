@@ -1,5 +1,5 @@
-![.NET Core](https://github.com/NoEducation/ArchitectureProject/workflows/.NET%20Core/badge.svg?branch=master) [![Build Status](https://dev.azure.com/atrasik/ArchitectureProject/_apis/build/status/NoEducation.ArchitectureProject?branchName=master)](https://dev.azure.com/atrasik/ArchitectureProject/_build/latest?definitionId=1&branchName=master)
-
+![.NET Core](https://github.com/NoEducation/ArchitectureProject/workflows/.NET%20Core/badge.svg?branch=master) [![Angular CLI](https://github.com/NoEducation/ArchitectureProject/actions/workflows/node.js.yml/badge.svg)](https://github.com/NoEducation/ArchitectureProject/actions/workflows/node.js.yml)
+ [![Build Status](https://dev.azure.com/atrasik/ArchitectureProject/_apis/build/status/NoEducation.ArchitectureProject?branchName=master)](https://dev.azure.com/atrasik/ArchitectureProject/_build/latest?definitionId=1&branchName=master)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -26,7 +26,7 @@
 
 ![alt text](https://github.com/NoEducation/ArchitectureProject/blob/master/Readme%20picutres/LandingPage.PNG)
 
-You are looking  right now at simple project created in ASP NET.CORE 3.1. It's contains basic fronted application written in Angular 8. 
+You are looking  right now at simple project created in ASP NET.CORE 6.0. It's contains basic fronted application written in Angular 8. 
 This repo is existing only for my learning purpose. I am trying to implement new features.
 
 
